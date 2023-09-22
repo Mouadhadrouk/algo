@@ -1,0 +1,36 @@
+ALGORITHM checkpoint 
+VAR
+
+BEGIN
+    def analyze_sentence():
+    sentence = input("Enter a sentence : ")
+    
+    sentence_length = 0
+    num_words = 0
+    num_vowels = 0
+    is_word = False
+    
+    def is_vowel(char):
+        vowels = "AEIOUaeiou"
+        return char in vowels
+    
+    for char in sentence:
+        sentence_length += 1
+        
+        if char == ' ':
+            is_word = False
+        else:
+            if not is_word:
+                num_words += 1
+                is_word = True
+            
+            if is_vowel(char):
+                num_vowels += 1
+    
+    print("Sentence Length:", sentence_length)
+    print("Number of Words:", num_words)
+    print("Number of Vowels:", num_vowels)
+
+analyze_sentence()
+
+END
